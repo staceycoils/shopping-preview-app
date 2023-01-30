@@ -1,0 +1,25 @@
+header {
+    width: 80vw;
+    height: 80px;
+    margin: 0px auto 0px auto;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+header img {
+    height: 100%;
+}
+
+header p {
+    flex-grow: calc(1/6);
+    margin: 0px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    transition-duration: 100ms;
+}
+
+header p:hover {
+    background-color: #aaaaaa;
+    transition-duration: 100ms;
+}
