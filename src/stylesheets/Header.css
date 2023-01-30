@@ -23,3 +23,17 @@ header p:hover {
     background-color: #aaaaaa;
     transition-duration: 100ms;
 }
+
+@media only screen and (max-width: 800px) {
+    header {
+        width: 100vw;
+        border-bottom: 1px solid black;
+    }
+    header p {
+        display: none;
+    }
+    header p:first-of-type {
+        display: initial;
+        margin: auto;
+    }
+}

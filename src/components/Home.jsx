@@ -73,7 +73,7 @@ function Home() {
       </section>
       <section id="offer">
         <p>
-          Spend £150 with us for free same-day delivery
+          Spend £150 with us for free same day delivery
           <br />
           <button>
             Read More
