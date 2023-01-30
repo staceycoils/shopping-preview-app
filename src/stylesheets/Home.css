@@ -1,8 +1,20 @@
 #Home {
     width: 80vw;
+    max-width: 1200px;
     margin: 40px auto 0px auto;
 
     overflow: hidden;
+}
+
+@media only screen and (max-width: 1200px) {
+    #Home {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #Home {
+        width: 100%;
+    }
 }
 
 #headlines {
@@ -28,14 +40,38 @@ img {
     object-fit: cover;
 }
 
+@media only screen and (max-width: 800px) {
+    #headlines {
+        width: 100vw;
+        height: fit-content;
+        flex-direction: row;
+    }
+    #headlines * {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 #tagline {
     text-align: center;
+}
+@media only screen and (max-width: 800px) {
+    #tagline {
+        font-size: 6vw;
+        margin: 20px 60px 20px 60px;
+    }
 }
 
 #conveyor {
     width: 2000px;
     height: 150px;
     overflow-y: hidden;
+}
+
+@media only screen and (max-width: 800px) {
+    #conveyor {
+        display: none;
+    }
 }
 
 .conveyorItem {
@@ -80,6 +116,32 @@ img {
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 90% 10%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .standouts span:last-of-type {
+        display: none;
+    }
+    .standouts span {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .standouts {
+        flex-wrap: wrap;
+        margin: 0px 0px 0px 0px;
+    }
+    .standouts span {
+        width: 100%;
+        display: initial;
+    }
+    .standouts span:last-of-type {
+        display: initial;
+    }
+    .standouts p {
+        display: none;
+    }
 }
 
 .standouts img {
@@ -130,14 +192,38 @@ img {
 
 #offer p {
     margin: 0px;
-    padding: 0px 40px 0px 40px;
+    padding: 0px 60px 0px 60px;
     align-self: center;
     text-transform: uppercase;
-    font-size: 30pt;
+    font-size: 26pt;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 #offer img {
     width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    #offer p, #offer button {
+        font-size: 24pt;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #offer {
+        display: block;
+        margin: 0px 0px 0px 0px;
+    }
+    #offer img {
+        display: none;
+    }
+    #offer p {
+        font-size: 4vw;
+        margin: 0px 20px 0px 20px;
+        padding: 50px 0px 50px 0px;
+    }
+    #offer button {
+        font-size: 4vw;
+    }
 }
