@@ -1,5 +1,6 @@
 import React from 'react'
 import '../stylesheets/Home.css'
+import data from '../data/placeholder.json'
 
 const images = [
   'pexels-david-bartus-1166209',
@@ -38,6 +39,7 @@ function Marquee(props) {
 }
 
 function Home() {
+  const arr = [1,2,3,4,5,6,7]
 
   return (
     <div id='Home'>
@@ -52,19 +54,16 @@ function Home() {
       <h1 id="tagline">Next Day Delivery available on most items.</h1>
       <section id="conveyor">
         <Marquee id={1} first={true}/>
-        <Marquee id={2}/>
-        <Marquee id={3}/>
-        <Marquee id={4}/>
-        <Marquee id={5}/>
-        <Marquee id={6}/>
-        <Marquee id={7}/>
-        <Marquee id={1}/>
-        <Marquee id={2}/>
-        <Marquee id={3}/>
-        <Marquee id={4}/>
-        <Marquee id={5}/>
-        <Marquee id={6}/>
-        <Marquee id={7}/>
+        {arr.slice(1).map((i)=>{
+          return (
+            <Marquee id={i} key={`Marquee1-${i}`}/>
+          )
+        })}
+        {arr.map((i)=>{
+          return (
+            <Marquee id={i} key={`Marquee2-${i}`}/>
+          )
+        })}
       </section>
       <section className="standouts">
         <Standout id={2}/>
