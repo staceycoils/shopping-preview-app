@@ -1,0 +1,42 @@
+#Item {
+    width: 80vw;
+    max-width: 1200px;
+    margin: 40px auto 0px auto;
+
+    overflow: hidden;
+}
+
+#itemContainer {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(auto, 5);
+}
+
+#itemContainer h1 {
+    margin: 10px 30px 10px 30px;
+    grid-column: span 2;
+}
+
+#itemContainer img {
+    grid-row: span 4;
+    width: 100%;
+    margin: 0px;
+}
+
+#itemContainer p {
+    margin: 50px 30px 0px 30px;
+}
+
+#itemPrice {
+    font-size: 32pt;
+}
+
+#itemContainer p:last-of-type {
+    margin: 10px 30px 40px 30px;
+}
+
+#itemContainer button {
+    font-size: inherit;
+    border: 2px solid black;
+    border-radius: 5px;
+}

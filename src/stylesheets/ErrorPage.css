@@ -1,0 +1,8 @@
+#ErrorPage {
+    width: fit-content;
+    max-width: 1200px;
+    margin: 40px auto 0px auto;
+
+    overflow: hidden;
+    text-align: center;
+}
