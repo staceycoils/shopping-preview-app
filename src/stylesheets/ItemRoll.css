@@ -1,0 +1,38 @@
+#ItemRoll {
+    width: 80vw;
+    max-width: 1200px;
+    margin: 40px auto 0px auto;
+
+    overflow: hidden;
+}
+
+a {
+    color: black;
+}
+
+#ItemContainer {
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22%;
+    column-gap: 4%;
+}
+
+.ItemSection {
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ItemSection img {
+    width: 100%;
+    height: 100%;
+}
+
+.ItemSection p {
+    width: 50%;
+    margin: 10px 0px 0px 0px;
+}
+
+.ItemSection p:last-of-type {
+    text-align: right;
+}

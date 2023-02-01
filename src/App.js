@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Item from './components/Item';
 import ErrorPage from './components/ErrorPage';
+import ItemRoll from './components/ItemRoll';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<ItemRoll />} />
         <Route path="/shop/:num" element={<Item />} />
         <Route path="/*" element={<ErrorPage errorType={404} />} />
       </Routes>
