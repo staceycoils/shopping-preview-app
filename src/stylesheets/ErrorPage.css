@@ -6,3 +6,10 @@
     overflow: hidden;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 800px) {
+    #ErrorPage {
+        width: 80vw;
+    }
+}
