@@ -1,6 +1,7 @@
 import React from 'react'
 import '../stylesheets/Home.css'
 import data from '../data/placeholder.json'
+import { Link } from 'react-router-dom';
 
 const images = [
   'pexels-david-bartus-1166209',
@@ -14,13 +15,16 @@ const images = [
 
 function Standout(props) {
   const { id } = props;
+  const item = data[id];
 
   return (
     <span>
-    <img src={require(`../assets/${images[id-1]}.jpg`)} 
-        alt='SideThingOne' />
+      <Link to={`/shop/${id-1}`} className='standoutImg'>
+        <img src={require(`../assets/${item.img_url}.jpg`)} 
+          alt={`SideThing${id}`} />
+      </Link>
       <p>Our Premium Selection</p>
-      <p onClick={()=>console.log("BUTTON")}>
+      <p onClick={()=>{}}>
         Shop Items
       </p>
     </span>
@@ -29,37 +33,46 @@ function Standout(props) {
 
 function Marquee(props) {
   const { id } = props;
+  const item = data[id];
   
   const first = props.first ? ' first' : "";
-  
+
   return (
-      <img src={require(`../assets/${images[id-1]}.jpg`)} 
-            alt={`item${id}`} className={`conveyorItem${first}`} />
+    <Link to={`/shop/${id-1}`} className={`conveyorItem${first}`}>
+      <img src={require(`../assets/${item.img_url}.jpg`)} 
+            alt={`item${id}`} />
+    </Link>
   )
 }
 
 function Home() {
-  const arr = [1,2,3,4,5,6,7]
+  const marqueeArray = [1,2,3,4,5,6,7]
 
   return (
     <div id='Home'>
       <section id="headlines">
-        <img src={require('../assets/pexels-eberhard-grossgasteiger-1287145.jpg')} 
-            alt='MainThing' id='mainImage'/>
-        <img src={require('../assets/pexels-david-bartus-1166209.jpg')} 
-            alt='SideThingOne' className='sideImage'/>
-        <img src={require('../assets/pexels-jaime-reimer-2662116.jpg')} 
-            alt='SideThingTwo' className='sideImage'/>
+        <Link to={`/shop/${1}`} id='mainImage'>
+          <img src={require(`../assets/${images[1]}.jpg`)} 
+              alt='MainThing' />
+        </Link>
+        <Link to={`/shop/${0}`} className='sideImage'>
+          <img src={require(`../assets/${images[0]}.jpg`)} 
+              alt='SideThingOne' />
+        </Link>
+        <Link to={`/shop/${4}`} className='sideImage'>
+          <img src={require(`../assets/${images[4]}.jpg`)} 
+              alt='SideThingTwo' />
+        </Link>
       </section>
       <h1 id="tagline">Next Day Delivery available on most items.</h1>
       <section id="conveyor">
         <Marquee id={1} first={true}/>
-        {arr.slice(1).map((i)=>{
+        {marqueeArray.slice(1).map((i)=>{
           return (
             <Marquee id={i} key={`Marquee1-${i}`}/>
           )
         })}
-        {arr.map((i)=>{
+        {marqueeArray.map((i)=>{
           return (
             <Marquee id={i} key={`Marquee2-${i}`}/>
           )
