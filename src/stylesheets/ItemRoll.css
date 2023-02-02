@@ -69,3 +69,21 @@ a {
         width: 90%;
     }
 }
+
+#LoadingBar {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+#loadingSpinner {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
