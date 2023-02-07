@@ -14,18 +14,20 @@ const images = [
 ];
 
 function Standout(props) {
-  const { id } = props;
+  const { id, category } = props;
   const item = data[id];
+  const linkCat = category ? `?t=${category}` : "/" ;
+  const textCat = category ? category.slice(3) : "All" ;
 
   return (
     <span>
-      <Link to={`/shop/${id-1}`} className='standoutImg'>
+      <Link to={`/shop${linkCat}`} className='standoutImg'>
         <img src={require(`../assets/${item.img_url}.jpg`)} 
           alt={`SideThing${id}`} />
       </Link>
       <p>Our Premium Selection</p>
       <p onClick={()=>{}}>
-        Shop Items
+        {textCat} Items
       </p>
     </span>
   )
@@ -79,9 +81,9 @@ function Home() {
         })}
       </section>
       <section className="standouts">
-        <Standout id={2}/>
-        <Standout id={5}/>
-        <Standout id={1}/>
+        <Standout id={2} category={"catOne"}/>
+        <Standout id={5} category={"catTwo"}/>
+        <Standout id={1} category={"catThree"}/>
       </section>
       <section id="offer">
         <p>
@@ -95,9 +97,9 @@ function Home() {
             alt='MainThing' />
       </section>
       <section className="standouts">
-        <Standout id={3}/>
-        <Standout id={7}/>
-        <Standout id={6}/>
+        <Standout id={3} category={"catFour"}/>
+        <Standout id={7} category={"catFive"}/>
+        <Standout id={6} category={null}/>
       </section>
     </div>
   )
