@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../stylesheets/Header.css';
 import SearchBox from './SearchBox';
+import logo from '../assets/github.jpeg'
 
 function CategoryBox({ showCategories, setShowCategories }) {
   if (!showCategories) return null;
@@ -37,12 +38,15 @@ export default function Header() {
   const [ showSearchbar, setShowSearchbar ] = useState(false);
   const [ query, setQuery ] = useState("");
   const [ displayMessage, setDisplayMessage ] = useState("");
+  const [ mobileMenu, setMobileMenu ] = useState(false)
 
   const searchClass = showSearchbar ? "searchBar" : "";
+  const mobileMenuClass = mobileMenu ? "ext" : "";
 
   useEffect(()=>{
     setShowCategories(false);
     setShowSearchbar(false);
+    setMobileMenu(false);
   }, [location])
 
   useEffect(() => {
@@ -67,35 +71,50 @@ export default function Header() {
   }
 
   return (
-      <header className={`${searchClass}`}>
-          {/* <img src={logo} alt='logo' /> */}
-            <span onClick={(e)=>{extendSearchbar()}}>
-              Search
-            </span>
-            <div className={`${searchClass}`} >
-              <input type="text" id="searchBox" name="SearchBoxing" 
-              ref={searchBoxRef} 
-              onChange={(e)=>{setQuery(e.target.value)}}
-              onBlur={()=>{closeSearchbar()}}
-              />
-            </div>
-          <Link to={"/brands"}>
+      <header className={`${searchClass} ${mobileMenuClass}`}>
+          <div id="menu_button" className='mob' onClick={()=>{setMobileMenu(!mobileMenu)}}>
+              <p className="menu_line mob" ></p>
+              <p className="menu_line mob" ></p>
+              <p className="menu_line mob" ></p>
+          </div>
+          <Link to="/" id="logoLink">
+            <img src={logo} alt='logo' className=''/>
+          </Link>
+          <span onClick={()=>{extendSearchbar()}} id="searchButtonMain" className='mobHide'>
+            Search
+          </span>
+          <span onClick={()=>{extendSearchbar()}} id="searchButtonMob" className='mob'>
+            &#9906;
+          </span>
+          <div id="searchTab" className={`${searchClass}`} >
+            <input type="text" id="searchBox" name="SearchBoxing" 
+            ref={searchBoxRef} 
+            onChange={(e)=>{setQuery(e.target.value)}}
+            onBlur={()=>{closeSearchbar()}}
+            />
+          </div>
+          <Link to={"/brands"} id="menu1" className={'mobMenu'}>
             <span >Brands</span>
           </Link>
-          <span onMouseEnter={()=>{setShowCategories(true)}}
-                onMouseLeave={()=>{setShowCategories(false)}}>
-            Categories</span>
-          <Link to={"/storefinder"}>
+            <span id="menu2" className={'mobMenu self'}
+                onMouseEnter={()=>{setShowCategories(true)}}
+                onMouseLeave={()=>{setShowCategories(false)}}
+                onClick={()=>{setShowCategories(!showCategories)}}>
+              Categories
+            </span>
+          <Link to={"/storefinder"} id="menu3" className={'mobMenu'}>
             <span>Store Finder</span>
           </Link>
-          <Link to={"/account"}>
+          <Link to={"/account"} id="menu4" className={'mobMenu'}>
             <span>Account</span>
           </Link>
-          <Link to={"/checkout"}>
+          <Link to={"/checkout"} id="menu5" className={'mobMenu last'}>
             <span>Checkout</span>
           </Link>
           <CategoryBox showCategories={showCategories} setShowCategories={setShowCategories} />
           <SearchResults showSearchbar={showSearchbar} displayMessage={displayMessage}/>
+
+          
       </header>
   )
 }

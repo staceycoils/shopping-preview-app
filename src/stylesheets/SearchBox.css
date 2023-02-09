@@ -66,3 +66,27 @@
 .searchResult span:hover {
     background-color: transparent;
 }
+
+@media only screen and (max-width: 1200px) {
+    .searchSection {
+        grid-template-columns: repeat(2, calc(50% - (10px)));
+    }
+    .searchSectionTitle {
+        grid-column: span 2;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #searchResults {
+        width: 100vw;
+        max-height: 100vh;
+        font-size: 20pt;
+    }
+    .searchSection {
+        grid-template-columns: 100%;
+    }
+    .searchResult {
+        border-radius: 8px;
+        grid-template-columns: 50% 50%;
+    }
+}
