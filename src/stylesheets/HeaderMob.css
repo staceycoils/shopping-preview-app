@@ -1,0 +1,171 @@
+header {
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    border-bottom: 2px solid black;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-between;
+    
+    text-align: center;
+    text-decoration: none;
+
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mobHide {
+    display: none;
+}
+
+.mob, #logoHeader, #logoHeader img {
+    display: block;
+}
+#logoHeader img {
+    height: 80px;
+    width: 150px;
+}
+
+#menuButton {
+    height: 80px;
+    width: 60px;
+    padding: 0px 0px 0px 20px;
+}
+.menuLine {
+    height: 6px;
+    width: 40px;
+    margin: 6px 0px 0px 0px;
+    border-radius: 5px;
+    padding: 0px;
+    background-color: black;
+}
+#menuButton .menuLine:first-of-type {
+    margin-top: 25px;
+}
+
+#searchTabMob {
+    width: 80px;
+    font-size: 30pt;
+}
+
+.mobMenu,
+.mobMenu.self {
+    background-color: rgb(219, 219, 219);
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin: 0px;
+    padding: 20px 0px 20px 0px;
+    z-index: 10;
+    font-size: 20pt;
+}
+
+.last {
+    border-bottom: 4px ridge;
+}
+
+.ext {
+    flex-wrap: wrap;
+}
+
+#menu1 {
+    order: 1;
+    border-top: 4px groove;
+}
+#menu2 {
+    order: 2;
+}
+#menu3 {
+    order: 4;
+}
+#menu4 {
+    order: 5;
+}
+#menu5 {
+    order: 6;
+}
+
+#categoryBox {
+    position: relative;
+    top: 0px;
+    order: 3;
+    width: 100%;
+    border-top: 4px groove;
+    border-bottom: 4px ridge;
+    background-color: white;
+}
+
+#categoryBox p {
+    width: fit-content;
+    font-size: 16pt;
+    text-decoration: none;
+    margin: 16px auto 16px auto;
+}
+
+header .searchTab {  
+    width: 100vw;
+    position: absolute;
+    height: 80px;
+    top: -80px;
+    
+    margin: 0px;
+    padding: 0px;
+    transition-duration: 500ms;
+    z-index: 20;
+    background-color: white;
+}
+input {
+    width: calc(100% - 40px);
+    height: 50px;
+    margin: 14px 10px 14px 10px;
+    padding: 0px 10px 0px 10px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    font-size: 20pt;
+}
+.searchTab.searchBar {
+    transform: translateY(80px);
+}
+#closeButton {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -50px;
+    right: 20px;
+}
+#closeButton.searchBar{
+    transform: translateY(55px);
+}
+.closeCircle {
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.closeLine-cw {
+    position: absolute;
+    top: 43%;
+    left: 15%;
+    background-color: white;
+    width: 70%;
+    height: 14%;
+    transform: rotate(45deg);
+    border-radius: 8px
+}
+.closeLine-ccw {
+    position: absolute;
+    top: 43%;
+    left: 15%;
+    background-color: white;
+    width: 70%;
+    height: 14%;
+    transform: rotate(-45deg);
+    border-radius: 8px
+}
