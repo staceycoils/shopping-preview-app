@@ -10,12 +10,12 @@ function ItemSection(props) {
 
     return (
         <span className='ItemSection'>
-            <Link to={`/shop/${id}`} >
+            <Link to={`/shop/${data[id].id}`} >
                 <img src={require(`../assets/${data[id].img_url}.jpg`)} 
                 alt="this item"/>
             </Link>
             <p>
-                <Link to={`/shop/${id}`} >{ data[id].name }</Link>
+                <Link to={`/shop/${data[id].id}`} >{ data[id].name }</Link>
             </p>
             <p>£{ data[id].price.toFixed(2) }</p>
         </span>
