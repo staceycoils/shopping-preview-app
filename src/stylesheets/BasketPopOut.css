@@ -1,0 +1,72 @@
+#BasketPopOut {
+    width: 200px;
+    height: fit-content;
+    border: 1px solid black;
+    background-color: white;
+
+    position: absolute;
+    right: 10vw;
+    top: 80px;
+    font-size: 12pt;
+    animation: fade 500ms;
+}
+#BasketPopOut.fadeOut {
+    opacity: 0.1;
+    transition-duration: 500ms;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }    
+    100% {
+        opacity: 1;
+    }
+}
+
+#basketEmpty {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.basketPacer {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.basketSection {
+    width: 180px;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 10px;
+}
+
+#imgHolder {
+    width: 100%;
+    height: 100px;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.basketSection p:nth-child(2) {
+    margin: 5px 0px 0px 0px;
+    text-align: left;
+}
+.basketSection p:nth-child(3) {
+    margin: 5px 0px 0px 0px;
+    text-align: right;
+}
+.basketSection span {
+    grid-column: span 2;
+}
+
+#basketEnd {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#basketEnd p:last-child {
+    font-weight: bold;
+    text-align: right;
+}
