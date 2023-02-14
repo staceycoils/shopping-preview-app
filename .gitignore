@@ -2,7 +2,6 @@
 
 src/old*
 src/assets/writer*
-src/data
 
 # dependencies
 /node_modules
