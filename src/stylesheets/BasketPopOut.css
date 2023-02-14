@@ -70,3 +70,29 @@ img {
     font-weight: bold;
     text-align: right;
 }
+
+
+
+@media only screen and (max-width: 800px) {
+    #BasketPopOut {
+        width: 80vw;
+        margin: auto;
+        position: fixed;
+        top: 100px;
+        border: none;
+        border-radius: 10px;
+        animation: fade 500ms;
+    }
+    #BasketPopOut * {
+        display: none;
+    }
+    #BasketPopOut .mob {
+        height: fit-content;
+        padding: 20px 0px 20px 0px;
+        border: 2px solid black;
+        border-radius: 10px;
+        display: block;
+        font-size: 6vw;
+        text-align: center;
+    }
+}

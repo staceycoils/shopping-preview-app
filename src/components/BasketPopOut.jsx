@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import '../stylesheets/BasketPopOut.css';
 import { BasketContext } from '../contexts/BasketContext';
 
-export default function BasketPopOut({ display }) {
+export default function BasketPopOut({ display, item }) {
     const { basket, setBasket } = useContext(BasketContext);
     const displayClass = display === true ? "fadeOut" : "" ;
 
@@ -36,6 +36,9 @@ export default function BasketPopOut({ display }) {
         <section id="basketEnd" className='basketPacer'>
             <p>Total:</p> 
             <p id="basketTotal">£{basketPrice.toFixed(2)}</p>
+        </section>
+        <section className='mob'>
+            {item.name} added to basket!
         </section>
     </div>
   )
