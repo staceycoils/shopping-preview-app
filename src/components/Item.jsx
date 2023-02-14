@@ -48,7 +48,8 @@ export default function Item() {
 
   return (
     <div id="Item">
-      {popOut ? <BasketPopOut display={popOutFade}/> : null}
+      {popOut ? <BasketPopOut display={popOutFade} item={item}/> : null}
+      {/* <BasketPopOut display={popOutFade} item={item}/>  */}
       <section id="itemContainer">
         <h1>
           {item.name}

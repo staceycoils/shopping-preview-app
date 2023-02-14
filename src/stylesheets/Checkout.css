@@ -3,8 +3,6 @@
     max-width: 800px;
     height: fit-content;
     margin: 40px auto 0px auto;
-
-    /* overflow: hidden; */
 }
 
 .checkoutItem {
@@ -89,4 +87,39 @@
     min-height: fit-content;
     padding: auto 0px auto 0px;
     line-height: 6;
+}
+
+@media only screen and (max-width: 800px) {
+    #Checkout {
+        margin-top: 120px;
+    }
+    .checkoutItem * {
+        font-size: 20pt !important;
+    }
+    .checkoutItem span {
+        height: fit-content;
+    }
+    #removalLink {
+        text-align: center;
+        margin: auto;
+        border: 2px solid grey;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .checkoutItem {
+        gap: 0px;
+        grid-template-columns: auto;
+    }
+    .checkoutItem * {
+        font-size: 6vw !important;
+    }
+    .checkoutItem img {
+        grid-row: span 1;
+    }
+    #removalLink {
+        font-size: 20pt;
+    }
 }
