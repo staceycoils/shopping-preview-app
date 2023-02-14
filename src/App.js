@@ -10,6 +10,7 @@ import ItemRoll from './components/ItemRoll';
 import Checkout from './components/Checkout';
 import { BasketContext } from './contexts/BasketContext';
 import { useState } from 'react';
+import ScrollOnChange from './components/ScrollOnChange';
 
 function App() {
   const [ basket, setBasket ] = useState([])
@@ -18,6 +19,7 @@ function App() {
     <BrowserRouter>
       <BasketContext.Provider value={{ basket, setBasket }}>
         <div className="App">
+          <ScrollOnChange />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
